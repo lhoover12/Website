@@ -1,13 +1,13 @@
-import Router from './Router'
+import Router from "./Router";
 
-const mapStateToProps = (state) => {
-    return {
-    }
-  }
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {dispatch
-    }
-  }
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatch
+  };
+};
 
 export default Router;

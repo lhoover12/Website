@@ -23,28 +23,26 @@ const Container = props => (
 export default class Router extends Component {
   render() {
     return (
-      <BrowserRouter basename={"/page"}>
-        <Container>
-          <Grid fluid>
-            <Switch>
-              <Route exact path="/home" render={props => <Home {...props} />} />
-              <Route
-                exact
-                path="/projects"
-                render={props => <Projects {...props} />}
-              />
-              <Route
-                exact
-                path="/skills"
-                render={props => <Skills {...props} />}
-              />
-              <Route>
-                <Redirect to="/home" />
-              </Route>
-            </Switch>
-          </Grid>
-        </Container>
-      </BrowserRouter>
+      <div>
+        <BrowserRouter basename={"/page"}>
+          <Switch>
+            <Route exact path="/home" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path="/projects"
+              render={props => <Projects {...props} />}
+            />
+            <Route
+              exact
+              path="/skills"
+              render={props => <Skills {...props} />}
+            />
+            <Route>
+              <Redirect to="/home" />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
     );
   }
 }

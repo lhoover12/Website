@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Glyphicon } from "react-bootstrap";
-import LrgComponent from "../panels/LrgComponent";
 import { Link } from "react-router-dom";
 import dog from "../assets/images/road.jpg";
 import About from "../About";

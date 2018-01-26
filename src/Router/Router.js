@@ -7,6 +7,8 @@ import { Grid } from "react-bootstrap";
 import styled from "styled-components";
 import { Header, Footer } from "../components";
 
+import About from "../About";
+
 const Wrapper = styled.div`
   height: 100%;
 `;
@@ -37,6 +39,7 @@ export default class Router extends Component {
               path="/skills"
               render={props => <Skills {...props} />}
             />
+            <Route exact path="/about" render={props => <About {...props} />} />
             <Route>
               <Redirect to="/home" />
             </Route>

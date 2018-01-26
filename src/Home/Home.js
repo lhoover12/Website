@@ -4,13 +4,12 @@ import LrgComponent from "../panels/LrgComponent";
 import { Link } from "react-router-dom";
 import dog from "../assets/images/road.jpg";
 import About from "../About";
-
+import Tech from "../Tech";
 import alien from "../assets/images/back.gif";
 import dock from "../assets/images/bg_2048.jpg";
 
 import styled from "styled-components";
-
-import { SectionsContainer, Section, Header, Footer } from "react-fullpage";
+import { SectionsContainer, Section } from "react-fullpage";
 export default class Home extends Component {
   render() {
     const Banner = styled.div`
@@ -140,7 +139,7 @@ export default class Home extends Component {
       sectionClassName: "section",
       anchors: ["sectionOne", "sectionTwo", "sectionThree", "sectionFour"],
       scrollBar: false,
-      navigation: true,
+      navigation: false,
       verticalAlign: false,
       arrowNavigation: true
     };
@@ -148,11 +147,12 @@ export default class Home extends Component {
       <SectionsContainer {...options}>
         <Section color="#2C417F">
           <Banner> Lukas!</Banner>
+
           <LeftArrow glyph="arrow-down" />
           <RightArrow glyph="arrow-down" />
         </Section>
-        <Section>
-          <About />
+        <Section color="#354E98">
+          <Tech />
         </Section>
         <Section>
           <Water>

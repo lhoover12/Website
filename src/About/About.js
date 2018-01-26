@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Grid, Col } from "react-bootstrap";
+import { Row, Grid, Col, Image } from "react-bootstrap";
 
 import react from "../Svg/react.svg";
 
@@ -13,16 +13,19 @@ import nodejs from "../Svg/nodejs.svg";
 import redux from "../Svg/redux.svg";
 import boot from "../Svg/bootstrap.svg";
 import styled from "styled-components";
+import Flipper from "../components/Flipper";
 
 const Gr = styled(Grid)`
-  height: 100%;
+  max-height: 100%;
   width: 100%;
 `;
 const Ro = styled(Row)`
   padding-bottom: 5%;
   width: 100%;
 `;
-const Co = styled(Col)``;
+const Co = styled(Col)`
+  height: 200px;
+`;
 const Built = styled.h1`
   font-size: 100px;
   margin: auto;
@@ -39,26 +42,30 @@ const Center = styled.div`
   display: block;
   margin: auto;
 `;
-const Img1 = styled.img`
-  width: 75%;
+const Img1 = styled(Image)`
   margin-left: 30px;
   margin-right: 30px;
   display: block;
   margin: auto;
+  height: auto;
+  max-width: 100%;
 `;
 const Img2 = styled.img`
-  width: 42%;
-  margin-left: 30px;
+  margin-left: -50px;
   margin-right: 30px;
+  max-height: 100%;
+  max-width: 50%;
 `;
 const Img3 = styled.img`
-  width: 66%;
   margin-left: 30px;
   margin-right: 30px;
+  max-height: 100%;
+  max-width: 66%;
 `;
 const App = styled.p`
   text-align: center;
 `;
+
 export default class About extends Component {
   render() {
     return (
@@ -67,47 +74,47 @@ export default class About extends Component {
         <Gr>
           <Ro>
             <Co md={4} mdOffset={4}>
-              <Img1 src={react} />
-              <App>React.js</App>
+              <Flipper front={<Img1 src={react} />} back={<div>back</div>} />
             </Co>
           </Ro>
 
           <Ro>
             <Co md={3} mdOffset={2}>
-              <Img2 src={boot} />
-              <App>BootStrap</App>
+              <Flipper
+                front={<Img2 src={boot} />}
+                back={<App>BootStrap</App>}
+              />
             </Co>
             <Co md={3}>
-              <Img2 src={awsS3} />
-              <App>AWS S3</App>
+              <Flipper front={<Img2 src={awsS3} />} back={<App>AWS S3</App>} />
             </Co>
             <Co md={3}>
-              <Img2 src={cloud} />
-              <App>AWS Cloud Front</App>
+              <Flipper
+                front={<Img2 src={cloud} />}
+                back={<App>AWS Cloud Front</App>}
+              />
             </Co>
           </Ro>
           <Ro>
             <Center>
               <Co md={2} mdOffset={1}>
-                <Img3 src={git} />
-                <App>GIT</App>
+                <Flipper front={<Img3 src={git} />} back={<App>GIT</App>} />
               </Co>
               <Co md={2}>
-                <Img3 src={npm} />
-                <App>NPM</App>
+                <Flipper front={<Img3 src={npm} />} back={<App>NPM</App>} />
               </Co>
 
               <Co md={2}>
-                <Img3 src={nodejs} />
-                <App>Node.js</App>
+                <Flipper
+                  front={<Img3 src={nodejs} />}
+                  back={<App>Node.js</App>}
+                />
               </Co>
               <Co md={2}>
-                <Img3 src={aws} />
-                <App>AWS</App>
+                <Flipper front={<Img3 src={aws} />} back={<App>AWS</App>} />
               </Co>
               <Co md={2}>
-                <Img3 src={redux} />
-                <App>Redux</App>
+                <Flipper front={<Img3 src={redux} />} back={<App>Redux</App>} />
               </Co>
             </Center>
           </Ro>

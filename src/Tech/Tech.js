@@ -16,7 +16,7 @@ const Ro = styled(Row)`
     .glyphicon {
       display: block;
       position: absolute !important;
-      color: rebeccapurple !important;
+      color: #CB9B1E !important;
       padding-left: 0px;
       -webkit-animation: MoveLeftRight 2s linear infinite;
       -moz-animation: MoveLeftRight 2s linear infinite;

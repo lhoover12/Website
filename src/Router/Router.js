@@ -1,55 +1,51 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Home from '../Home';
-import Skills from '../Skills';
-import Projects from '../Projects';
-import {Grid} from 'react-bootstrap';
-import styled from 'styled-components';
-import {Header} from '../components'
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Home from "../Home";
+import Skills from "../Skills";
+import Projects from "../Projects";
+import { Grid } from "react-bootstrap";
+import styled from "styled-components";
+import { Header, Footer } from "../components";
+
+import About from "../About";
 
 const Wrapper = styled.div`
   height: 100%;
 `;
 
-
-const Container =props => (
+const Container = props => (
   <Wrapper>
     <Header />
+
     {props.children}
+    <Footer />
   </Wrapper>
-)
+);
 
 export default class Router extends Component {
   render() {
     return (
-     <BrowserRouter>
-     <Container>
-       <Grid fluid>
-
-
-     <Route
-       path='/'>
-       <Redirect to='/home'/>
-     </Route>
-
-      <Route
-       exact
-       path='/home'
-       render={props => (<Home {...props} />)}>
-      </Route>
-      <Route
-       exact
-       path='/projects'
-       render={props => (<Skills {...props} />)}>
-      </Route>
-      <Route
-       exact
-       path='/skills'
-       render={props => (<Projects {...props} />)}>
-      </Route>
-      </Grid>
-      </Container>
-     </BrowserRouter>
-    )
+      <div>
+        <BrowserRouter basename={"/page"}>
+          <Switch>
+            <Route exact path="/home" render={props => <Home {...props} />} />
+            <Route
+              exact
+              path="/projects"
+              render={props => <Projects {...props} />}
+            />
+            <Route
+              exact
+              path="/skills"
+              render={props => <Skills {...props} />}
+            />
+            <Route exact path="/about" render={props => <About {...props} />} />
+            <Route>
+              <Redirect to="/home" />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
   }
 }

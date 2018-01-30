@@ -16,11 +16,11 @@ const Ro = styled(Row)`
     .glyphicon {
       display: block;
       position: absolute !important;
-      color: #CB9B1E !important;
+      color: #cb9b1e !important;
       padding-left: 0px;
-      -webkit-animation: MoveLeftRight 2s linear infinite;
-      -moz-animation: MoveLeftRight 2s linear infinite;
-      animation: MoveLeftRight 2s linear infinite;
+      -webkit-animation: MoveLeftRight 1s linear infinite;
+      -moz-animation: MoveLeftRight 1s linear infinite;
+      animation: MoveLeftRight 1s linear infinite;
       @-moz-keyframes MoveLeftRight {
         0% {
           padding-left: 0px;

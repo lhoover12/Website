@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { SectionsContainer, Section } from "react-fullpage";
-import aws from "../Svg/aws.svg";
+
 import awsS3 from "../Svg/aws-s3.svg";
 import cloud from "../Svg/aws-cloudfront.svg";
 
@@ -38,15 +38,8 @@ export default class About extends Component {
   render() {
     let options = {
       sectionClassName: "section",
-      anchors: [
-        "sectionOne",
-        "sectionTwo",
-        "sectionThree",
-        "sectionFour",
-        "sectionFive",
-        "sectionSix"
-      ],
-      scrollBar: false,
+      anchors: ["1", "2", "3", "4", "5", "6", "7"],
+      scrollBar: true,
       navigation: false,
       verticalAlign: false,
       arrowNavigation: true
@@ -104,6 +97,17 @@ export default class About extends Component {
               "React Router is a collection of navigational components that compose declaratively with your application. Whether you want to have bookmarkable URLs for your web app or a composable way to navigate in React Native."
             }
             link={"https://reacttraining.com/react-router/"}
+          />
+        </Section>
+        <Section color="#5B77CB">
+          <InnerPage
+            Header={"GitHub"}
+            img={github}
+            content={
+              "GitHub is a web-based hosting service for version control using git. "
+            }
+            link={"https://github.com/lhoover12"}
+            linkTitle="View Github"
           />
         </Section>
       </SectionsContainer>

@@ -53,7 +53,7 @@ const Butt = Styled(Paper)`
     @media (max-width: 500px) {
         font-size: 12vw;
         height: 70px;
-      }
+    }
     `;
 
 export default class componentName extends Component {
@@ -72,7 +72,9 @@ export default class componentName extends Component {
           </Col>
           <Col md={12}>
             <a href={this.props.link}>
-              <Butt>Learn more</Butt>
+              <Butt>
+                {this.props.linkTitle ? this.props.linkTitle : "Learn more"}
+              </Butt>
             </a>
           </Col>
         </Ro>

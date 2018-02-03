@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Glyphicon } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import dog from "../assets/images/road.jpg";
-import About from "../About";
 import Tech from "../Tech";
 import alien from "../assets/images/back.gif";
 import dock from "../assets/images/bg_2048.jpg";

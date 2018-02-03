@@ -1,24 +1,14 @@
 import React, { Component } from "react";
-
+import styled from "styled-components";
 import { SectionsContainer, Section } from "react-fullpage";
 
 import awsS3 from "../Svg/aws-s3.svg";
 import cloud from "../Svg/aws-cloudfront.svg";
-
-import git from "../Svg/git-icon.svg";
-import npm from "../Svg/npm.svg";
-import nodejs from "../Svg/nodejs.svg";
 import react from "../Svg/react.svg";
 import router from "../Svg/react-router.svg";
 import redux from "../Svg/redux.svg";
-import boot from "../Svg/bootstrap.svg";
-
 import github from "../Svg/github-icon.svg";
-
 import InnerPage from "./InnerPage";
-
-import styled from "styled-components";
-import { MuiThemeProvider, Paper } from "material-ui";
 
 const Banner = styled.div`
   font-size: 4.5vw;

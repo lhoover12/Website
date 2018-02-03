@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Col } from "react-bootstrap";
 
 const Head = styled.div`
   font-size: 65px;

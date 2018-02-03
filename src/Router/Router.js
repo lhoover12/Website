@@ -3,24 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "../Home";
 import Skills from "../Skills";
 import Projects from "../Projects";
-import { Grid } from "react-bootstrap";
 import styled from "styled-components";
 import { Header, Footer } from "../components";
 
 import About from "../About";
-
-const Wrapper = styled.div`
-  height: 100%;
-`;
-
-const Container = props => (
-  <Wrapper>
-    <Header />
-
-    {props.children}
-    <Footer />
-  </Wrapper>
-);
 
 export default class Router extends Component {
   render() {

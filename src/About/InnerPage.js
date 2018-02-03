@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
 import Styled from "styled-components";
-import { Row, Grid, Col, Image } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { MuiThemeProvider, Paper } from "material-ui";
+
 const Header = Styled.h1`
 font-family: VT323;
 font-size: 11vw;

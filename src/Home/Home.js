@@ -39,6 +39,12 @@ export default class Home extends Component {
             ? " font-size: 32.5vw; padding-top: 83%;"
             : "font-size: 13vw;"};
       }
+      @media (max-width: 360px) {
+        ${props =>
+          props.textFull
+            ? " font-size: 32.5vw; padding-top: 83%;"
+            : "font-size: 11vw;"};
+      }
     `;
     const BELEVIE = styled.h1`
       font-size: 70px;
@@ -113,13 +119,7 @@ export default class Home extends Component {
 
     let options = {
       sectionClassName: "section",
-      anchors: [
-        "sectionOne",
-        "sectionTwo",
-        "sectionThree",
-        "sectionFour",
-        "sectionFive"
-      ],
+      anchors: ["1", "2", "3", "4", "5"],
       scrollBar: false,
       navigation: false,
       verticalAlign: false,

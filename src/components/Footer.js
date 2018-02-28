@@ -10,8 +10,13 @@ const FooterWrapper = styled.footer`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 #b1dcff;
+  position: inherit;
+  display: block;
+  bottom: 0;
 `;
 
 const Heart = styled.div`

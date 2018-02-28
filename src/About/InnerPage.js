@@ -27,6 +27,10 @@ font-size: 3vw;
 const Img = Styled.img`
 display:block;
 margin:auto;
+width: 50%;
+@media (min-width: 768px) {
+
+}
 @media (max-width: 500px) {
     width: 25%;
   }
@@ -50,7 +54,8 @@ const Butt = Styled(Paper)`
     color: #fff;
     width: 100%;
     font-size: 4vw;
-    height: 110px;
+    height: auto !important;
+  
     @media (max-width: 500px) {
         font-size: 12vw;
         height: 70px;

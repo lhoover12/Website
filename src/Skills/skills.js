@@ -1,28 +1,34 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Grid, Col } from "react-bootstrap";
-
+import { Return } from "../components";
+import { Header, Footer } from "../components";
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
-  min-height: 1000px;
-  font-size: 12vw;
+  height: 90%;
   text-align: center;
+  font-size: 7vw;
   @media (max-width: 780px) {
-    padding-top: 50%;
-    font-size: 20vw;
+    font-size: 16vw;
   }
 `;
+
 export default class Skills extends Component {
   render() {
     return (
-      <Grid>
-        <Row>
-          <Col md={12}>
-            <Wrapper>TODO... Get Good At Somthing</Wrapper>
-          </Col>
-        </Row>
-      </Grid>
+      <div>
+        <Header />
+        <Grid style={{ paddingTop: "110px" }}>
+          <Row>
+            <Col md={12}>
+              <Wrapper>
+                TODO... Get Good At Somthing <Return to="/" />
+              </Wrapper>
+            </Col>
+          </Row>
+        </Grid>
+        <Footer />
+      </div>
     );
   }
 }

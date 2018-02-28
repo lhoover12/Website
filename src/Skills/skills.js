@@ -5,7 +5,7 @@ import { Return } from "../components";
 import { Header, Footer } from "../components";
 const Wrapper = styled.div`
   width: 100%;
-  height: 90%;
+  height: 100%;
   text-align: center;
   font-size: 7vw;
   @media (max-width: 780px) {
@@ -24,6 +24,9 @@ export default class Skills extends Component {
               <Wrapper>
                 TODO... Get Good At Somthing <Return to="/" />
               </Wrapper>
+              <p style={{ textAlign: "center", height: "150px" }}>
+                (I do have some skills, I just don't have the time to brag.)
+              </p>
             </Col>
           </Row>
         </Grid>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Glyphicon } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import dog from "../assets/images/road.jpg";
-import About from "../About";
 import Tech from "../Tech";
 import alien from "../assets/images/back.gif";
 import dock from "../assets/images/bg_2048.jpg";
@@ -40,6 +38,12 @@ export default class Home extends Component {
           props.textFull
             ? " font-size: 32.5vw; padding-top: 83%;"
             : "font-size: 13vw;"};
+      }
+      @media (max-width: 360px) {
+        ${props =>
+          props.textFull
+            ? " font-size: 32.5vw; padding-top: 83%;"
+            : "font-size: 11vw;"};
       }
     `;
     const BELEVIE = styled.h1`
@@ -115,13 +119,7 @@ export default class Home extends Component {
 
     let options = {
       sectionClassName: "section",
-      anchors: [
-        "sectionOne",
-        "sectionTwo",
-        "sectionThree",
-        "sectionFour",
-        "sectionFive"
-      ],
+      anchors: ["1", "2", "3", "4", "5"],
       scrollBar: false,
       navigation: false,
       verticalAlign: false,

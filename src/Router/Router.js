@@ -3,24 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "../Home";
 import Skills from "../Skills";
 import Projects from "../Projects";
-import { Grid } from "react-bootstrap";
 import styled from "styled-components";
 import { Header, Footer } from "../components";
 
 import About from "../About";
-
-const Wrapper = styled.div`
-  height: 100%;
-`;
-
-const Container = props => (
-  <Wrapper>
-    <Header />
-
-    {props.children}
-    <Footer />
-  </Wrapper>
-);
 
 export default class Router extends Component {
   render() {
@@ -28,6 +14,11 @@ export default class Router extends Component {
       <div>
         <BrowserRouter basename={"/page"}>
           <Switch>
+            <Route
+              exact
+              path="/page/home"
+              render={props => <Home {...props} />}
+            />
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route
               exact
@@ -36,10 +27,25 @@ export default class Router extends Component {
             />
             <Route
               exact
+              path="/page/projects"
+              render={props => <Projects {...props} />}
+            />
+            <Route
+              exact
               path="/skills"
               render={props => <Skills {...props} />}
             />
+            <Route
+              exact
+              path="/page/skills"
+              render={props => <Skills {...props} />}
+            />
             <Route exact path="/about" render={props => <About {...props} />} />
+            <Route
+              exact
+              path="/page/about"
+              render={props => <About {...props} />}
+            />
             <Route>
               <Redirect to="/home" />
             </Route>

@@ -10,14 +10,17 @@ const Wrapper = styled(Col)`
   width: 100%;
   height: 90%;
   text-align: center;
-  background-color: #eee;
-  border-radius: 35px;
+  background-color: #e2e2e2;
+
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  box-shadow: 5px 5px 10px #aab1cc;
 `;
 const Site = styled.img`
-  width: 90%;
-  margin: 30px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 `;
 const SiteName = styled.p`
   margin-top: -20px;

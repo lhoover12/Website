@@ -12,6 +12,7 @@ import boot from "../Svg/bootstrap.svg";
 import InnerPage from "./InnerPage";
 import img from "../assets/images/heart.png";
 import Header from "../components/Header";
+import Arrow from "../Arrow";
 const Banner = styled.div`
   font-size: 4.5vw;
   width: 100%;
@@ -82,6 +83,8 @@ export default class About extends Component {
           <Section color="#2C417F">
             <Banner> What Powers This Site?</Banner>
             <Return to="/">Return Home</Return>
+            <Arrow float={"left"} glyph="arrow-down" />
+            <Arrow float={"right"} glyph="arrow-down" />
           </Section>
           <Section color="#8CA9FF">
             <InnerPage

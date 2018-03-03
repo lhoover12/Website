@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import Router from "./Router";
 import { Provider } from "react-redux";
 import Store from "./store";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {

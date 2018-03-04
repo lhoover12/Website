@@ -9,9 +9,10 @@ export default class Arrow extends Component {
       color: #8496cc;
       position: relative !important;
       font-size: 60px;
-      ${
-        this.props.float === "right" ? "right:30px;" : "padding-left:20px; "
-      } -webkit-animation: ${this.props.name} 2s linear infinite;
+      ${this.props.float === "right"
+        ? "right:30px;"
+        : "padding-left:20px; "} -webkit-animation: ${this.props
+          .name} 2s linear infinite;
       -moz-animation: UpDown 2s linear infinite;
       animation: UpDown 2s linear infinite;
       @-moz-keyframes UpDown {

@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "../Home";
 import Skills from "../Skills";
 import Projects from "../Projects";
-import styled from "styled-components";
-import { Header, Footer } from "../components";
 
 import About from "../About";
 

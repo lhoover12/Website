@@ -26,30 +26,6 @@ const Banner = styled.div`
     font-size: 11.5vw;
   }
 `;
-const Head = styled.h1`
-  font-family: VT323;
-  font-size: 11vw;
-  width: 100%;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 17vw;
-    text-align: center;
-  }
-`;
-const Heart = styled.div`
-  background-image: url(${img});
-  height: 60%;
-  width: 80%;
-  background-repeat: no-repeat;
-  background-size: 10%;
-  margin: auto;
-  background-position: 0px;
-  display: block;
-  background-position: center;
-  @media (max-width: 768px) {
-    background-size: 30%;
-  }
-`;
 const Return = styled(Link)`
   font-size: 2vw;
   text-align: center;

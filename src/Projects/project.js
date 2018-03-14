@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Grid, Col } from "react-bootstrap";
-import { Return } from "../components";
 import { Header, Footer } from "../components";
 import img from "../assets/images/Lukas.PNG";
 import Health from "../assets/images/Health.PNG";

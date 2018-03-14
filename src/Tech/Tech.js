@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Grid, Col, Image } from "react-bootstrap";
+import { Row, Grid, Col } from "react-bootstrap";
 import { RaisedButton, MuiThemeProvider } from "material-ui";
 import styled from "styled-components";
 import { Link } from "react-router-dom";

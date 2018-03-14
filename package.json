@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "enzyme": "^3.3.0",
     "material-ui": "^0.20.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
@@ -20,11 +21,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "prettier -l \"src/**/*.js\" && react-scripts build",
+    "test": "react-scripts test --env=jsdom ",
+    "eject": "react-scripts eject",
+    "prettier:diff": ""
   },
   "devDependencies": {
-    "webpack": "^4.0.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "webpack": "^4.0.1",
+    "prettier": "1.7.4" 
   }
 }

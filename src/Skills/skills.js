@@ -25,8 +25,9 @@ export default class Skills extends Component {
                 TODO... Get Good At Somthing <Return to="/" />
               </Wrapper>
               <p style={{ textAlign: "center", height: "150px" }}>
-                (if this message is visible, Travis CI auto deploy works. Finally) (I do have some
-                skills, I just don't have the time to brag.)
+                (if this message is visible, Travis CI auto deploy works.
+                Finally) (I do have some skills, I just don't have the time to
+                brag.)
               </p>
             </Col>
           </Row>

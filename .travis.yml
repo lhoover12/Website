@@ -13,7 +13,6 @@ deploy:
   secret_access_key: $AWS_SEC
   bucket: $S3_BUCKET
   local_dir: build
-  upload-dir: page
 after_deploy:
   # Allow `awscli` to make requests to CloudFront.
   - aws configure set preview.cloudfront true

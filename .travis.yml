@@ -8,11 +8,12 @@ script:
   - npm test
   - npm run build
 deploy:
+  local_dir: "build"
   provider: s3
   access_key_id: $AWS_ID
   secret_access_key: $AWS_SEC
   bucket: $S3_BUCKET
-  local_dir: build
+  upload-dir: page
 after_deploy:
   # Allow `awscli` to make requests to CloudFront.
   - aws configure set preview.cloudfront true

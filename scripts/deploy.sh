@@ -7,7 +7,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     PRNUM = "PR-$TRAVIS_PULL_REQUEST"
     echo "$PRNUM"
 fi
+# if Pr deploy to s3 bucket/PR-(PRNUM)
 
-
-
-
+# if master deploy to main s3 bucket/Page
+# maybe have dev - prod bucket

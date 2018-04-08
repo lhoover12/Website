@@ -125,6 +125,7 @@ export default class Home extends Component {
       verticalAlign: false,
       arrowNavigation: true
     };
+    window.scrollTo(0, 0);
     return (
       <SectionsContainer {...options}>
         <Section color="#2C417F">

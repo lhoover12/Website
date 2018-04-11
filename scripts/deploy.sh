@@ -1,5 +1,8 @@
 echo "build script dude."
-echo "$TRAVIS_PULL_REQUEST" 
+echo "$TRAVIS_PULL_RE
+pip install awscli
+
+QUEST" 
 echo "$TRAVIS_BRANCH"
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then

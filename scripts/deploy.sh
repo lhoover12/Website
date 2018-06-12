@@ -1,5 +1,8 @@
 echo "build script dude."
-echo "$TRAVIS_PULL_REQUEST" 
+echo "$TRAVIS_PULL_RE
+pip install awscli
+
+QUEST" 
 echo "$TRAVIS_BRANCH"
 pip install --user awscli # install aws cli w/o sudo
 

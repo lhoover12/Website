@@ -4,7 +4,7 @@ import { RaisedButton, MuiThemeProvider } from "material-ui";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Glyphicon } from "react-bootstrap";
-
+import { Spring } from "react-spring";
 const Ro = styled(Row)`
   margin-top: 5%;
   margin-bottom: 10%;
@@ -69,6 +69,11 @@ const Button = styled(RaisedButton)`
 `;
 
 export default class Tech extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hash: window.location.hash };
+  }
+
   render() {
     const style = {
       fontFamily: "VT323",
@@ -77,6 +82,7 @@ export default class Tech extends Component {
     const buttonStyle = {
       backgroundColor: "#8496cc"
     };
+
     return (
       <div>
         <MuiThemeProvider>

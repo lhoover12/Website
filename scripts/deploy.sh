@@ -1,6 +1,7 @@
 echo "build script dude."
 echo "$TRAVIS_PULL_REQUEST" 
 echo "$TRAVIS_BRANCH"
+pip install --user awscli # install aws cli w/o sudo
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     aws configure set aws_access_key_id $AWS_ID

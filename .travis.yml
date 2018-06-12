@@ -1,12 +1,12 @@
 language: node_js
 node_js:
   - "stable"
-before_install:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
 cache:
   directories:
   - node_modules
+  before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
 script:
   - npm test
   - npm run build

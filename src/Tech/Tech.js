@@ -69,6 +69,11 @@ const Button = styled(RaisedButton)`
 `;
 
 export default class Tech extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hash: window.location.hash };
+  }
+
   render() {
     const style = {
       fontFamily: "VT323",
@@ -77,6 +82,7 @@ export default class Tech extends Component {
     const buttonStyle = {
       backgroundColor: "#8496cc"
     };
+
     return (
       <div>
         <MuiThemeProvider>

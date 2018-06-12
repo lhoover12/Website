@@ -6,29 +6,32 @@
     "bootstrap": "^3.3.7",
     "enzyme": "^3.3.0",
     "material-ui": "^0.20.0",
-    "react": "^16.2.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
     "react-bootstrap": "^0.31.5",
     "react-dev-utils": "^4.2.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.4.0",
     "react-fullpage": "^0.1.18",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
+    "react-scripts": "1.1.4",
+    "react-spring": "^5.3.8",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "styled-components": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "prettier -l \"src/**/*.js\" && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom ",
     "eject": "react-scripts eject",
-    "prettier:diff": ""
+    "prettier:fix": "yarn prettier --write 'src/**/*.js'",
+    "prettier:diff": "prettier -l 'src/**/*.js'"
   },
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
-    "webpack": "^4.0.1",
-    "prettier": "1.7.4" 
+    "prettier": "1.7.4",
+    "webpack": "^4.0.1"
   }
 }

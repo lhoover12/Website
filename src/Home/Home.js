@@ -138,7 +138,7 @@ export default class Home extends Component {
       verticalAlign: false,
       arrowNavigation: true
     };
-    const toggle = this.state;
+
     window.scrollTo(0, 0);
     return (
       <SectionsContainer {...options}>

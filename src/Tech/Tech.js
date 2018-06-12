@@ -4,7 +4,7 @@ import { RaisedButton, MuiThemeProvider } from "material-ui";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Glyphicon } from "react-bootstrap";
-import { Spring } from "react-spring";
+
 const Ro = styled(Row)`
   margin-top: 5%;
   margin-bottom: 10%;

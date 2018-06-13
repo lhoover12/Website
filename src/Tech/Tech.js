@@ -103,12 +103,6 @@ export default class Tech extends Component {
     const buttonStyle = {
       backgroundColor: "#8496cc"
     };
-    var t = true;
-    if (this.state.hash === "#2") {
-      t = false;
-    } else {
-      t;
-    }
     console.log(this.state);
     return (
       <div>
@@ -124,8 +118,8 @@ export default class Tech extends Component {
                     config={{ tension: 80, friction: 20 }}
                     from={{ color: "black" }}
                     to={{
-                      width: window.location.hash != "#2" ? 0 : 100,
-                      left: window.location.hash != "#2" ? 50 : 0
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
                     }}
                     onRest={() => {
                       this.setState({ toggle: false });
@@ -150,8 +144,8 @@ export default class Tech extends Component {
                     config={{ tension: 40, friction: 20 }}
                     from={{ color: "black" }}
                     to={{
-                      width: window.location.hash != "#2" ? 0 : 100,
-                      left: window.location.hash != "#2" ? 50 : 0
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
                     }}
                     onRest={() => {
                       this.setState({ toggle: false });
@@ -176,8 +170,8 @@ export default class Tech extends Component {
                     config={{ tension: 20, friction: 20 }}
                     from={{ color: "black" }}
                     to={{
-                      width: window.location.hash != "#2" ? 0 : 100,
-                      left: window.location.hash != "#2" ? 50 : 0
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
                     }}
                     onRest={() => {
                       this.setState({ toggle: false });

@@ -121,7 +121,9 @@ const Content = ({ left, right, width }) => (
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { toggle: true };
+    this.state = {
+      toggle: true
+    };
   }
   toggle = () => {
     this.setState({ toggle: !this.state.toggle });

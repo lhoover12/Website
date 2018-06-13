@@ -4,8 +4,8 @@ echo "$TRAVIS_BRANCH"
 pip install --upgrade pip --user awscli # install aws cli w/o sudo
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    aws configure set aws_access_key_id $AWS_ID
-    aws configure set aws_secret_access_key_id $AWS_SEC
+    AWS Access Key ID [None]: $AWS_ID
+    AWS Secret Access Key [None]: $AWS_SEC
     PRNUM="PR-$TRAVIS_PULL_REQUEST"
     aws s3 sync ./build s3://lukasdevelopementtest/$PRNUM/ --metadata-directive REPLACE
     echo "Current build is a Pull Request "

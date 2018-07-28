@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Grid, Col } from "react-bootstrap";
-import { Return } from "../components";
+import react from "../Svg/react.svg";
+import aws from "../Svg/aws.svg";
+import bootstrap from "../Svg/bootstrap.svg";
 import { Header, Footer } from "../components";
-const Wrapper = styled.div`
+import Styled from "styled-components";
+const Wrapper = styled.h1`
   width: 100%;
   height: 100%;
   text-align: center;
@@ -13,6 +16,17 @@ const Wrapper = styled.div`
   }
 `;
 
+const Img = Styled.img`
+display:block;
+margin:auto;
+width: 50%;
+@media (min-width: 768px) {
+
+}
+@media (max-width: 500px) {
+    width: 25%;
+  }
+`;
 export default class Skills extends Component {
   render() {
     return (
@@ -21,15 +35,19 @@ export default class Skills extends Component {
         <Grid style={{ paddingTop: "110px" }}>
           <Row>
             <Col md={12}>
-              <Wrapper>
-                TODO... Get Good At Somthing <Return to="/" />
-              </Wrapper>
-              <p style={{ textAlign: "center", height: "150px" }}>
-                (if this message is visible, Travis CI auto deploy works.
-                Finally)
-                 (I do have some skills, I just don't have the time to
-                brag.)
-              </p>
+              <Wrapper>Exceptional!</Wrapper>
+            </Col>
+            <Col md={3}>
+              <Img src={react} />
+            </Col>
+            <Col md={3}>
+              <Img src={aws} />
+            </Col>
+            <Col md={3}>
+              <Img src={bootstrap} />
+            </Col>
+            <Col md={3}>
+              <Img src={react} />
             </Col>
           </Row>
         </Grid>

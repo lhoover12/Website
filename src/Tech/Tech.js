@@ -4,6 +4,7 @@ import { RaisedButton, MuiThemeProvider } from "material-ui";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Glyphicon } from "react-bootstrap";
+import { Spring } from "react-spring";
 
 const Ro = styled(Row)`
   margin-top: 5%;
@@ -67,13 +68,33 @@ const Button = styled(RaisedButton)`
   margin-bottom: 5%;
   font-size
 `;
+const Links = styled(Link)`
+  div {
+    background: none !important;
+    box-shadow: none !important;
+  }
+`;
 
+const Content = ({ left, right, width, label, buttonStyle, labelStyle }) => (
+  <Button
+    style={{ marginLeft: `${left}%`, width: `${width}%` }}
+    buttonStyle={buttonStyle}
+    label={label}
+    labelStyle={labelStyle}
+  />
+);
 export default class Tech extends Component {
   constructor(props) {
     super(props);
-    this.state = { hash: window.location.hash };
+    this.state = {
+      hash: window.location.hash,
+      toggle: true
+    };
   }
-
+  toggle = () => {
+    this.setState({ toggle: !this.state.toggle });
+  };
+  componentDidMount = () => {};
   render() {
     const style = {
       fontFamily: "VT323",
@@ -82,7 +103,7 @@ export default class Tech extends Component {
     const buttonStyle = {
       backgroundColor: "#8496cc"
     };
-
+    console.log(this.state);
     return (
       <div>
         <MuiThemeProvider>
@@ -92,13 +113,24 @@ export default class Tech extends Component {
                 <Icon glyph="arrow-right" />
               </Col>
               <Col md={4}>
-                <Link to="/projects">
-                  <Button
+                <Links to="/projects">
+                  <Spring
+                    config={{ tension: 80, friction: 20 }}
+                    from={{ color: "black" }}
+                    to={{
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
+                    }}
+                    onRest={() => {
+                      this.setState({ toggle: false });
+                    }}
+                    toggle={this.state.toggle} // Additional props will be spread over the child
                     label="Projects"
                     buttonStyle={buttonStyle}
                     labelStyle={style}
+                    children={Content} // Render prop
                   />
-                </Link>
+                </Links>
               </Col>
             </Ro>
 
@@ -107,13 +139,24 @@ export default class Tech extends Component {
                 <Icon glyph="arrow-right" />
               </Col>
               <Col md={4}>
-                <Link to="skills">
-                  <Button
-                    buttonStyle={buttonStyle}
+                <Links to="skills">
+                  <Spring
+                    config={{ tension: 40, friction: 20 }}
+                    from={{ color: "black" }}
+                    to={{
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
+                    }}
+                    onRest={() => {
+                      this.setState({ toggle: false });
+                    }}
+                    toggle={this.state.toggle} // Additional props will be spread over the child
                     label="Skills"
+                    buttonStyle={buttonStyle}
                     labelStyle={style}
+                    children={Content} // Render prop
                   />
-                </Link>
+                </Links>
               </Col>
             </Ro>
 
@@ -122,13 +165,24 @@ export default class Tech extends Component {
                 <Icon glyph="arrow-right" />
               </Col>
               <Col md={4}>
-                <Link to="about">
-                  <Button
-                    buttonStyle={buttonStyle}
+                <Links to="about">
+                  <Spring
+                    config={{ tension: 20, friction: 20 }}
+                    from={{ color: "black" }}
+                    to={{
+                      width: window.location.hash !== "#2" ? 0 : 100,
+                      left: window.location.hash !== "#2" ? 50 : 0
+                    }}
+                    onRest={() => {
+                      this.setState({ toggle: false });
+                    }}
+                    toggle={this.state.toggle} // Additional props will be spread over the child
                     label="This Site"
+                    buttonStyle={buttonStyle}
                     labelStyle={style}
+                    children={Content} // Render prop
                   />
-                </Link>
+                </Links>
               </Col>
             </Ro>
           </Grid>

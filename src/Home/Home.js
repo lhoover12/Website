@@ -7,6 +7,7 @@ import dock from "../assets/images/bg_2048.jpg";
 import { Spring } from "react-spring";
 import styled from "styled-components";
 import { SectionsContainer, Section } from "react-fullpage";
+import { Link } from "react-router-dom";
 
 const Banner = styled.div`
   font-size: 90px;
@@ -21,8 +22,8 @@ const Smoke = styled.div`
   background-image: url(${alien});
   height: 100%;
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 0px;
+  background-size: cover;
+  background-position: 50%;
 `;
 const Web = styled.h1`
   ${props =>
@@ -31,6 +32,29 @@ const Web = styled.h1`
       : "font-size: 8vw;"} margin: 0;
   text-align: center;
   color: #a5bcff;
+  @media (max-width: 430px) {
+    ${props =>
+      props.textFull
+        ? " font-size: 32.5vw; padding-top: 83%;"
+        : "font-size: 13vw;"};
+  }
+  @media (max-width: 360px) {
+    ${props =>
+      props.textFull
+        ? " font-size: 32.5vw; padding-top: 83%;"
+        : "font-size: 11vw;"};
+  }
+`;
+const DOGS = styled(Link)`
+  text-decoration: underline !important;
+  display: inherit !important;
+  color: #a5bcff !important;
+  ${props =>
+    props.textFull
+      ? "padding-top: 35vh; font-size: 18.5vw;"
+      : "font-size: 8vw;"} margin: 0;
+  text-align: center;
+
   @media (max-width: 430px) {
     ${props =>
       props.textFull
@@ -57,16 +81,8 @@ const Sec = styled.div`
   height: 100%;
   background-repeat: no-repeat;
   font-size: 5vw;
-  background-position: 0px;
-  @media (min-width: 768px) {
-    background-size: 100%;
-  }
-  @media (max-width: 768px) {
-    background-position-x: 50%;
-  }
-  @media (max-width: 380px) {
-    background-position-x: -700px;
-  }
+  background-position: 50%;
+  background-size: cover;
 `;
 const Arrow = styled(Glyphicon)`
   float: ${props => props.float};
@@ -148,7 +164,7 @@ export default class Home extends Component {
           <Arrow float={"left"} glyph="arrow-down" />
           <Arrow float={"right"} glyph="arrow-down" />
           <Spring
-            config={{ tension: 180, friction: 60 }}
+            config={{ tension: 180, friction: 20 }}
             from={{ color: "black" }}
             to={{
               width: this.state.toggle ? 0 : 100,
@@ -168,7 +184,9 @@ export default class Home extends Component {
         </Section>
         <Section>
           <Sec pic={dog}>
-            <Web textFull>THE DUDE.</Web>
+            <DOGS to="/dogs" textFull>
+              DOGS
+            </DOGS>
           </Sec>
         </Section>
         <Section>

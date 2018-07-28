@@ -4,7 +4,7 @@ import Home from "../Home";
 import Skills from "../Skills";
 import Projects from "../Projects";
 import Error from "../Error";
-
+import Dogs from "../dogs";
 import About from "../About";
 
 export default class Router extends Component {
@@ -34,6 +34,7 @@ export default class Router extends Component {
               path="/skills"
               render={props => <Skills {...props} />}
             />
+            <Route exact path="/dogs" render={props => <Dogs {...props} />} />
             <Route
               exact
               path="/page/skills"

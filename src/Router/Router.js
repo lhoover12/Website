@@ -6,6 +6,7 @@ import Projects from "../Projects";
 import Error from "../Error";
 import Dogs from "../dogs";
 import About from "../About";
+import Birthday from "../Birthday";
 
 export default class Router extends Component {
   render() {
@@ -45,6 +46,34 @@ export default class Router extends Component {
               exact
               path="/page/about"
               render={props => <About {...props} />}
+            />
+            <Route
+              exact
+              path="/Jimmy/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Jimmy"} day={27} month={8} />
+              )}
+            />
+            <Route
+              exact
+              path="/Maddie/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Maddie"} day={12} month={3} />
+              )}
+            />
+            <Route
+              exact
+              path="/Liang/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Liang"} day={26} month={5} />
+              )}
+            />
+            <Route
+              exact
+              path="/Ryan/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Ryan"} day={12} month={3} />
+              )}
             />
             <Route exact path="/404" render={props => <Error {...props} />} />
             <Route exact path="/">

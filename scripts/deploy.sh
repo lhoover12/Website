@@ -3,7 +3,7 @@ echo "$TRAVIS_PULL_REQUEST"
 echo "$TRAVIS_BRANCH"
 pip install --upgrade --user awscli # install aws cli w/o sudo
 aws configure set aws_access_key_id $AWS_ID
-aws configure set aws_secret_access_key_id $AWS_SEC
+aws configure set aws_secret_access_key $AWS_SEC
 aws configure set default.region us-west-2
 aws --version
 

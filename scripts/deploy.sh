@@ -12,7 +12,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
 
     aws s3 sync ./build s3://lukasdevelopementtest/$PRNUM/ --metadata-directive REPLACE
     echo "Current build is a Pull Request "
-    echo "s3://lukasdevelopementtest/PR/$PRNUM/"
+    echo "s3://lukasdevelopementtest/page/$PRNUM/"
     echo "$PRNUM"
 fi
 # if Pr deploy to s3 bucket/PR-(PRNUM)

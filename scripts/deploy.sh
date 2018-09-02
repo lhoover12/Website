@@ -7,14 +7,20 @@ aws configure set aws_secret_access_key $AWS_SEC
 aws configure set default.region us-west-2
 aws --version
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    PRNUM="$TRAVIS_PULL_REQUEST"
+if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+    PRNUM="PR-$TRAVIS_PULL_REQUEST"
 
     aws s3 sync ./build s3://lukasdevelopementtest/$PRNUM/ --metadata-directive REPLACE
     echo "Current build is a Pull Request "
-    echo "s3://lukasdevelopementtest/page/$PRNUM/"
+    echo "s3://lukasdevelopementtest/page/PR/$PRNUM/"
     echo "$PRNUM"
 fi
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+    echo "################   master ####################"
+fi
+    echo "====="
+echo "$TRAVIS_BRANCH"
+echo "====="
 # if Pr deploy to s3 bucket/PR-(PRNUM)
 
 # if master deploy to main s3 bucket/Page

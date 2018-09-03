@@ -10,6 +10,8 @@ import Birthday from "../Birthday";
 
 export default class Router extends Component {
   render() {
+    console.log("here");
+    console.log(window);
     return (
       <div>
         <BrowserRouter basename={"/page"}>
@@ -75,6 +77,7 @@ export default class Router extends Component {
                 <Birthday {...props} person={"Ryan"} day={12} month={3} />
               )}
             />
+            <Route exact path="/PR/" />
             <Route exact path="/404" render={props => <Error {...props} />} />
             <Route exact path="/">
               <Redirect to="/home" />

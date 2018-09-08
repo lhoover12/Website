@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "LukasApp",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -17,14 +17,14 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^1.1.5",
     "react-spring": "^5.3.8",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "styled-components": "^2.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "SET REACT_APP_PATH=/page&&  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom ",
     "eject": "react-scripts eject",
@@ -34,6 +34,6 @@
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "prettier": "1.7.4",
-    "webpack": "^4.0.1"
+    "webpack": "^4.17.2"
   }
 }

@@ -10,17 +10,13 @@ import Birthday from "../Birthday";
 
 export default class Router extends Component {
   render() {
-    console.log("here");
-    console.log(window);
+    console.log(process.env.REACT_APP_PATH);
+    console.log(process.env);
     return (
       <div>
-        <BrowserRouter basename={"/page"}>
+        <BrowserRouter basename={process.env.REACT_APP_PATH}>
           <Switch>
-            <Route
-              exact
-              path="/page/home"
-              render={props => <Home {...props} />}
-            />
+            <Route exact path="/home" render={props => <Home {...props} />} />
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route
               exact
@@ -29,7 +25,7 @@ export default class Router extends Component {
             />
             <Route
               exact
-              path="/page/projects"
+              path="/projects"
               render={props => <Projects {...props} />}
             />
             <Route
@@ -44,11 +40,6 @@ export default class Router extends Component {
               render={props => <Skills {...props} />}
             />
             <Route exact path="/about" render={props => <About {...props} />} />
-            <Route
-              exact
-              path="/page/about"
-              render={props => <About {...props} />}
-            />
             <Route
               exact
               path="/Jimmy/Birthday"
@@ -77,7 +68,6 @@ export default class Router extends Component {
                 <Birthday {...props} person={"Ryan"} day={12} month={3} />
               )}
             />
-            <Route exact path="/PR/" />
             <Route exact path="/404" render={props => <Error {...props} />} />
             <Route exact path="/">
               <Redirect to="/home" />

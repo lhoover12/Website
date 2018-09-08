@@ -10,6 +10,8 @@ aws --version
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     PRNUM="PR-$TRAVIS_PULL_REQUEST"
     aws s3 sync ./build s3://lukasdevelopementtest/page/PR/$PRNUM/ --metadata-directive REPLACE
+    npm install
+    npm run SET REACT_APP_PATH=/page/PR&&  react-scripts build
     echo "Current build is a Pull Request "
     echo "s3://lukasdevelopementtest/page/PR/$PRNUM/"
     echo "$PRNUM"

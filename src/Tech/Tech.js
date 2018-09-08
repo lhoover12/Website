@@ -103,7 +103,7 @@ export default class Tech extends Component {
     const buttonStyle = {
       backgroundColor: "#8496cc"
     };
-    console.log(this.state);
+
     return (
       <div>
         <MuiThemeProvider>

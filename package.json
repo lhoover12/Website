@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "SET REACT_APP_PATH=/page&&  react-scripts start",
-    "build": "react-scripts build",
+    "build": "SET REACT_APP_PATH=/page&& react-scripts build",
     "test": "react-scripts test --env=jsdom ",
     "eject": "react-scripts eject",
     "prettier:fix": "yarn prettier --write 'src/**/*.js'",

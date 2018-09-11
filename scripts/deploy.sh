@@ -11,7 +11,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     PRNUM="PR-$TRAVIS_PULL_REQUEST"
     echo "yarn build "
     yarn
-    REACT_APP_PATH=/page/PR yarn build
+    REACT_APP_PATH=/page/PR/$PRNUM yarn build
     echo "s3://lukasdevelopementtest/page/PR/$PRNUM/"
     aws s3 sync ./build s3://lukasdevelopementtest/page/PR/$PRNUM/ --metadata-directive REPLACE
     echo "Current build is a Pull Request "

@@ -2,6 +2,7 @@
   "name": "LukasApp",
   "version": "0.2.0",
   "private": true,
+  "homepage": "http://lukashoover.com/page",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "enzyme": "^3.3.0",
@@ -25,7 +26,8 @@
   },
   "scripts": {
     "start": "SET REACT_APP_PATH=/page&&  react-scripts start",
-    "build": "SET REACT_APP_PATH=/page&& react-scripts build",
+    "build":
+      "SET REACT_APP_PATH=/page/PR/PR-16 && SET PUBLIC_URL=/page/PR/PR-16 && react-scripts build",
     "test": "react-scripts test --env=jsdom ",
     "eject": "react-scripts eject",
     "prettier:fix": "yarn prettier --write 'src/**/*.js'",

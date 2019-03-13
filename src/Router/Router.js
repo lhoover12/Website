@@ -6,18 +6,17 @@ import Projects from "../Projects";
 import Error from "../Error";
 import Dogs from "../dogs";
 import About from "../About";
+import Birthday from "../Birthday";
 
 export default class Router extends Component {
   render() {
+    console.log(process.env.REACT_APP_PATH);
+    console.log(process.env);
     return (
       <div>
-        <BrowserRouter basename={"/page"}>
+        <BrowserRouter basename={process.env.REACT_APP_PATH}>
           <Switch>
-            <Route
-              exact
-              path="/page/home"
-              render={props => <Home {...props} />}
-            />
+            <Route exact path="/home" render={props => <Home {...props} />} />
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route
               exact
@@ -26,7 +25,7 @@ export default class Router extends Component {
             />
             <Route
               exact
-              path="/page/projects"
+              path="/projects"
               render={props => <Projects {...props} />}
             />
             <Route
@@ -43,8 +42,31 @@ export default class Router extends Component {
             <Route exact path="/about" render={props => <About {...props} />} />
             <Route
               exact
-              path="/page/about"
-              render={props => <About {...props} />}
+              path="/Jimmy/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Jimmy"} day={27} month={8} />
+              )}
+            />
+            <Route
+              exact
+              path="/Maddie/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Maddie"} day={12} month={3} />
+              )}
+            />
+            <Route
+              exact
+              path="/Liang/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Liang"} day={26} month={5} />
+              )}
+            />
+            <Route
+              exact
+              path="/Ryan/Birthday"
+              render={props => (
+                <Birthday {...props} person={"Ryan"} day={12} month={3} />
+              )}
             />
             <Route exact path="/404" render={props => <Error {...props} />} />
             <Route exact path="/">

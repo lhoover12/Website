@@ -7,14 +7,25 @@ import Error from "../Error";
 import Dogs from "../dogs";
 import About from "../About";
 import Birthday from "../Birthday";
+import styled from "styled-components";
+import Header from "../Header"
+import Footer from '../components/Footer';
+import { Grid, Row as BootRow, Col } from "react-bootstrap";
+const Main = styled.main`
+  background-color: #efefef;
+  height: 95%;
+`;
+
+
 
 export default class Router extends Component {
   render() {
-    console.log(process.env.REACT_APP_PATH);
-    console.log(process.env);
     return (
-      <div>
         <BrowserRouter basename={process.env.REACT_APP_PATH}>
+        <>
+        <Header></Header>
+        <Main>
+          <Grid>
           <Switch>
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route exact path="/home" render={props => <Home {...props} />} />
@@ -75,9 +86,15 @@ export default class Router extends Component {
             <Route>
               <Redirect to="/404" />
             </Route>
-          </Switch>
+          </Switch>    
+          </Grid>
+            </Main>
+          <Footer>footer</Footer>
+          </>
         </BrowserRouter>
-      </div>
+
+
+
     );
   }
 }

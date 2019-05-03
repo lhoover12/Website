@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { SectionsContainer, Section } from "react-fullpage";
 import { Link } from "react-router-dom";
 
+import { Grid, Row as BootRow, Col } from "react-bootstrap";
+
 const Banner = styled.div`
   font-size: 90px;
   height: 150px;
@@ -159,47 +161,11 @@ export default class Home extends Component {
 
     window.scrollTo(0, 0);
     return (
-      <SectionsContainer {...options}>
-        <Section color="#2C417F">
-          <Arrow float={"left"} glyph="arrow-down" />
-          <Arrow float={"right"} glyph="arrow-down" />
-          <Spring
-            config={{ tension: 180, friction: 20 }}
-            from={{ color: "black" }}
-            to={{
-              width: this.state.toggle ? 0 : 100,
-              left: this.state.toggle ? 50 : 0
-            }}
-            onRest={() => {
-              if (this.state.toggle) {
-                this.toggle();
-              }
-            }}
-            toggle={this.state.toggle} // Additional props will be spread over the child
-            children={Content} // Render prop
-          />
-        </Section>
-        <Section color="#354E98">
-          <Tech />
-        </Section>
-        <Section>
-          <Sec pic={dog}>
-            <DOGS to="/dogs" textFull>
-              DOGS
-            </DOGS>
-          </Sec>
-        </Section>
-        <Section>
-          <Sec pic={dock}>
-            <Web>The Best web developer this side of the Mississippi.</Web>
-          </Sec>
-        </Section>
-        <Section>
-          <Smoke>
-            <BELEVIE>BELIEVE.</BELEVIE>
-          </Smoke>
-        </Section>
-      </SectionsContainer>
+      <div>
+        <BootRow>
+          <h1>Lukas Hoover</h1>
+        </BootRow>
+      </div>
     );
   }
 }

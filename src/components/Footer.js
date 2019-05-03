@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import img from "../assets/images/heart.png";
 const FooterWrapper = styled.footer`
-  margin-top: 80px;
+  
   height: 120px;
   padding: 40px;
   -webkit-align-items: center;
@@ -13,7 +13,7 @@ const FooterWrapper = styled.footer`
   position: absolute;
   bottom: 0;
   width: -webkit-fill-available;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 #b1dcff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 #708090;
   position: inherit;
   display: block;
   bottom: 0;

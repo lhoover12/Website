@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { Col, Row as BootRow } from 'react-bootstrap';
-
+//https://color.adobe.com/trends/Graphic-design?page=2
 const HomePage = styled.div`
   text-align: center;
   
@@ -31,18 +31,18 @@ const Subtext = styled.p`
   margin-bottom: 50px;
 `;
 const Border = styled.div`
-border: solid 1px #F2C36B;
-height: 0;
-width: 100%;
-    
+  border: solid 1px #f2c36b;
+  height: 0;
+  width: 100%;
 
-    margin-top: 1.2em;
+  margin-top: 1.2em;
 `;
 const Nav = styled.p`
   margin-bottom: 50px;
   width: 100%;
-  color: #BFCFD9;
-  font-size: calc(1.5vw + 1em);`;
+  color: #bfcfd9;
+  font-size: calc(1.5vw + 1em);
+`;
 
 export default class Home extends Component {
   constructor(props) {

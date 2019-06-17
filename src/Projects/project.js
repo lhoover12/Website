@@ -9,15 +9,15 @@ import depression from '../assets/images/depression.PNG';
 import psas from '../assets/images/psas.PNG';
 import Image from './image';
 const Wrapper = styled(Grid)`
-&&&{
-  min-height: 100vh;
-  text-align: center;
-  padding-right:0;
-  padding-left:0;
-  color: #F2D399;
+  &&& {
+    min-height: 100vh;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    color: #f2d399;
   }
 `;
-
+//https://color.adobe.com/trends/Graphic-design?page=2
 export default class Projects extends Component {
   render() {
     return (

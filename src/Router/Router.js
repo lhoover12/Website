@@ -12,8 +12,7 @@ import Header from "../Header"
 import Footer from '../components/Footer';
 import { Grid, Row as BootRow, Col } from "react-bootstrap";
 const Main = styled.main`
-  background-color: #efefef;
-  height: 95%;
+    background-color: #313340;
 `;
 
 
@@ -23,9 +22,9 @@ export default class Router extends Component {
     return (
         <BrowserRouter basename={process.env.REACT_APP_PATH}>
         <>
-        <Header></Header>
+
         <Main>
-          <Grid>
+  
           <Switch>
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route exact path="/home" render={props => <Home {...props} />} />
@@ -87,9 +86,9 @@ export default class Router extends Component {
               <Redirect to="/404" />
             </Route>
           </Switch>    
-          </Grid>
+     
             </Main>
-          <Footer>footer</Footer>
+          <Footer></Footer>
           </>
         </BrowserRouter>
 

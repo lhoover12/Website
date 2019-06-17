@@ -1,141 +1,49 @@
-import React, { Component } from "react";
-import { Glyphicon } from "react-bootstrap";
-import dog from "../assets/images/road.jpg";
-import Tech from "../Tech";
-import alien from "../assets/images/back.gif";
-import dock from "../assets/images/bg_2048.jpg";
-import { Spring } from "react-spring";
-import styled from "styled-components";
-import { SectionsContainer, Section } from "react-fullpage";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-import { Grid, Row as BootRow, Col } from "react-bootstrap";
+import { Col, Row as BootRow } from 'react-bootstrap';
 
-const Banner = styled.div`
-  font-size: 90px;
-  height: 150px;
-  margin-top: 21%;
-  background-color: #8496cc;
+const HomePage = styled.div`
   text-align: center;
-  font-family: VT323;
-  padding-top: 14px;
+  
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #313340;
+  color: #F2C36B;
+  linear-gradient(to right, #0367a6 0, #a2cdf2 100%);
 `;
-const Smoke = styled.div`
-  background-image: url(${alien});
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+const Heading = styled.h1`
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: calc(4vw + 1em);
+  font-weight: 700;
+  letter-spacing: 5px;
 `;
-const Web = styled.h1`
-  ${props =>
-    props.textFull
-      ? "padding-top: 15%; font-size: 18.5vw;"
-      : "font-size: 8vw;"} margin: 0;
-  text-align: center;
-  color: #a5bcff;
-  @media (max-width: 430px) {
-    ${props =>
-      props.textFull
-        ? " font-size: 32.5vw; padding-top: 83%;"
-        : "font-size: 13vw;"};
-  }
-  @media (max-width: 360px) {
-    ${props =>
-      props.textFull
-        ? " font-size: 32.5vw; padding-top: 83%;"
-        : "font-size: 11vw;"};
-  }
+const Subtext = styled.p`
+  width: 100%;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: calc(1.5vw + 1em);
+  margin-bottom: 50px;
 `;
-const DOGS = styled(Link)`
-  text-decoration: underline !important;
-  display: inherit !important;
-  color: #a5bcff !important;
-  ${props =>
-    props.textFull
-      ? "padding-top: 35vh; font-size: 18.5vw;"
-      : "font-size: 8vw;"} margin: 0;
-  text-align: center;
+const Border = styled.div`
+border: solid 1px #F2C36B;
+height: 0;
+width: 100%;
+    
 
-  @media (max-width: 430px) {
-    ${props =>
-      props.textFull
-        ? " font-size: 32.5vw; padding-top: 83%;"
-        : "font-size: 13vw;"};
-  }
-  @media (max-width: 360px) {
-    ${props =>
-      props.textFull
-        ? " font-size: 32.5vw; padding-top: 83%;"
-        : "font-size: 11vw;"};
-  }
+    margin-top: 1.2em;
 `;
-const BELEVIE = styled.h1`
-  font-size: 70px;
-  font-size: 155px;
-  margin: 0;
-  @media (max-width: 768px) {
-    font-size: 22.5vw;
-  }
-`;
-const Sec = styled.div`
-  background-image: url(${props => props.pic});
-  height: 100%;
-  background-repeat: no-repeat;
-  font-size: 5vw;
-  background-position: 50%;
-  background-size: cover;
-`;
-const Arrow = styled(Glyphicon)`
-  float: ${props => props.float};
-  color: #8496cc;
-  position: absolute !important;
-  top: 15% !important;
-  font-size: 60px;
-  ${props =>
-    props.float === "right"
-      ? "right:30px;"
-      : "padding-left:20px; "} -webkit-animation: MoveUpDown 2s linear infinite;
-  -moz-animation: MoveUpDown 2s linear infinite;
-  animation: MoveUpDown 2s linear infinite;
-  @-moz-keyframes MoveUpDown {
-    0% {
-      top: 17%;
-    }
-    50% {
-      top: 18%;
-    }
-    100% {
-      top: 17%;
-    }
-  }
-  @-webkit-keyframes MoveUpDown {
-    0% {
-      top: 17%;
-    }
-    50% {
-      top: 18%;
-    }
-    100% {
-      top: 17%;
-    }
-  }
-  @keyframes MoveUpDown {
-    0% {
-      top: 17%;
-    }
-    50% {
-      top: 18%;
-    }
-    100% {
-      top: 17%;
-    }
-  }
-`;
+const Nav = styled.p`
+  margin-bottom: 50px;
+  width: 100%;
+  color: #BFCFD9;
+  font-size: calc(1.5vw + 1em);`;
 
-const Content = ({ left, right, width }) => (
-  <Banner style={{ marginLeft: `${left}%`, width: `${width}%` }}>Lukas!</Banner>
-);
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -143,29 +51,33 @@ export default class Home extends Component {
       toggle: true
     };
   }
-  toggle = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
-  componentDidMount = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
   render() {
-    let options = {
-      sectionClassName: "section",
-      anchors: ["1", "2", "3", "4", "5"],
-      scrollBar: false,
-      navigation: false,
-      verticalAlign: false,
-      arrowNavigation: true
-    };
-
-    window.scrollTo(0, 0);
     return (
-      <div>
+      <HomePage>
         <BootRow>
-          <h1>Lukas Hoover</h1>
+          <Col md={12}>
+            <Heading>Lukas Hoover</Heading>
+          </Col>
+          <Col md={12}>
+            <Subtext>Cool Guy</Subtext>
+          </Col>
+          <Col md={3}>
+            <Nav>1</Nav>
+          </Col>
+          <Col md={1}>
+            <Border />
+          </Col>
+          <Col md={4}>
+            <Nav>2</Nav>
+          </Col>
+          <Col md={1}>
+            <Border />
+          </Col>
+          <Col md={3}>
+            <Nav>3</Nav>
+          </Col>
         </BootRow>
-      </div>
+      </HomePage>
     );
   }
 }

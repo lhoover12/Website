@@ -10,7 +10,7 @@
     "font-awesome-icons": "^1.4.3",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
+    "react": "16.8.6",
     "react-bootstrap": "^0.31.5",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.4.0",
@@ -25,7 +25,7 @@
     "styled-components": "^2.2.4"
   },
   "scripts": {
-    "start": "SET REACT_APP_PATH=/page&&  react-scripts start",
+    "start": "REACT_APP_PATH=/page&&  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom ",
     "eject": "react-scripts eject",

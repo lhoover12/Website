@@ -1,76 +1,37 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Grid, Col } from "react-bootstrap";
-import { Header, Footer } from "../components";
-import img from "../assets/images/Lukas.PNG";
-import Health from "../assets/images/Health.PNG";
-import Developer from "../assets/images/Developer.PNG";
-import depression from "../assets/images/depression.PNG";
-import psas from "../assets/images/psas.PNG";
-
-const Wrapper = styled(Col)`
-  width: 100%;
-  height: 90%;
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Row, Grid, Col } from 'react-bootstrap';
+import { Header, Footer } from '../components';
+import img from '../assets/images/Lukas.PNG';
+import Health from '../assets/images/Health.PNG';
+import Developer from '../assets/images/Developer.PNG';
+import depression from '../assets/images/depression.PNG';
+import psas from '../assets/images/psas.PNG';
+import Image from './image';
+const Wrapper = styled(Grid)`
+&&&{
+  min-height: 100vh;
   text-align: center;
-  background-color: #e2e2e2;
+  padding-right:0;
+  padding-left:0;
+  color: #F2D399;
+  }
+`;
 
-  margin-top: 20px;
-  margin-bottom: 40px;
-  box-shadow: 5px 5px 10px #aab1cc;
-`;
-const Site = styled.img`
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-`;
-const SiteName = styled.p`
-  margin-top: -20px;
-  text-align: center;
-  font-size: 3rem;
-`;
 export default class Projects extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Grid style={{ paddingTop: "110px" }}>
-          <Row>
-            <a href="https://provider.linkhealth.com/#/">
-              <Wrapper md={12}>
-                <Site src={Health} />
-                <SiteName>provider.linkhealth.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="https://developer.linkhealth.com/">
-              <Wrapper md={12}>
-                <Site src={Developer} />
-                <SiteName>developer.linkhealth.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="http://lukashoover.com">
-              <Wrapper md={12}>
-                <Site src={img} />
-                <SiteName>LukasHoover.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="https://www.liveandworkwell.com/en/member/mind-body/mental-health/depression/depression-screener.html">
-              <Wrapper md={12}>
-                <Site src={depression} />
-                <SiteName>Depression Screener</SiteName>
-              </Wrapper>
-            </a>
-            <a href=" https://provider.liveandworkwell.com/content/laww/providersearch/en/home.html">
-              <Wrapper md={12}>
-                <Site src={psas} />
-                <SiteName>Provider Search Widget</SiteName>
-              </Wrapper>
-            </a>
-           
-          </Row>
-        </Grid>
-        <Footer />
-      </div>
+      <Wrapper>
+        <Col md={12}>
+          <h1>hey</h1>
+        </Col>
+        <Image img={img} />
+        <Image img={Health} />
+        <Image img={Developer} />
+        <Image img={depression} />
+        <Image img={psas} />
+        <Image />
+      </Wrapper>
     );
   }
 }

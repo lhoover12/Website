@@ -1,5 +1,13 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component, useEffect } from 'react';
+import styled from 'styled-components';
+import ConfettiGenerator from 'confetti-js';
+const Absolute = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+`;
 
 const Body = styled.div`
   position: absolute;
@@ -11,40 +19,42 @@ const Body = styled.div`
   background-color: #000;
 `;
 const Text = styled.h1`
+  z-index: 100;
   font-size: 5em;
   color: #ff69b4;
 `;
-class Birthday extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      getDate: new Date(),
-      day: 0,
-      moth: 0
-    };
-  }
-  componentDidMount() {
-    this.setState({
-      month: this.state.getDate.getMonth() + 1,
-      day: this.state.getDate.getDate()
-    });
-  }
 
-  render() {
-    return (
-      <Body>
+function Birthday(props) {
+  var getDate = new Date();
+  let month = getDate.getMonth() + 1;
+  let day = getDate.getDate();
+  let birthday = month === props.month && day === props.day;
+  useEffect(() => {
+    if (birthday) {
+      const confettiSettings = {
+        target: 'my-canvas'
+      };
+      const confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+
+      return () => confetti.clear();
+    }
+  });
+
+  return (
+    <Body>
+      {birthday && (
+        <div>
+          <canvas id='my-canvas'> </canvas>
+        </div>
+      )}
+      <Absolute>
         <Text>Birthday.</Text>
-
-        <Text>Is it {this.props.person} Birthday?</Text>
-        <Text>
-          {this.state.month === this.props.month &&
-          this.state.day === this.props.day
-            ? "Yes."
-            : "No."}
-        </Text>
-      </Body>
-    );
-  }
+        <Text>Is it {props.person} Birthday?</Text>
+        <Text>{birthday ? 'Yes.' : 'No.'}</Text>
+      </Absolute>
+    </Body>
+  );
 }
 
 export default Birthday;

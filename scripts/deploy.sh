@@ -1,6 +1,7 @@
 echo "build script dude."
-echo "$TRAVIS_PULL_REQUEST"
-echo "$TRAVIS_BRANCH"
+echo "PR num  $TRAVIS_PULL_REQUEST"
+echo "branch $TRAVIS_BRANCH"
+echo "PR branch $TRAVIS_PULL_REQUEST_BRANCH"
 echo " this is PR-$TRAVIS_PULL_REQUEST  and   $TRAVIS_EVENT_TYPE"
 pip install --upgrade --user awscli # install aws cli w/o sudo
 aws configure set aws_access_key_id $AWS_ID

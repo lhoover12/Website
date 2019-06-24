@@ -20,7 +20,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     echo "$PRNUM"
     echo "##############################################"
 fi
-if [ "$TRAVIS_BRANCH" == "master" ]; then
+if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request"]; then
      #echo "################   master ####################"
     # REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
      echo "deploying to s3  /page/"

@@ -20,15 +20,16 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     echo "$PRNUM"
     echo "##############################################"
 fi
-if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request"]; then
+if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
      #echo "################   master ####################"
-    # REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
+     # REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
      echo "deploying to s3  /page/"
-    # aws s3 sync ./build s3://lukasdevelopementtest/page/ --metadata-directive REPLACE
+     # aws s3 sync ./build s3://lukasdevelopementtest/page/ --metadata-directive REPLACE
      echo "Prod updated "
      #aws cloudfront create-invalidation --distribution-id E1DPUTDLIX844A --paths /
      echo "##############################################"
 fi
+
 echo "====="
 echo "$TRAVIS_BRANCH"
 echo "====="

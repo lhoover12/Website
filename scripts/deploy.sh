@@ -2,12 +2,18 @@ echo "build script dude."
 echo "PR num  $TRAVIS_PULL_REQUEST"
 echo "branch $TRAVIS_BRANCH"
 echo "PR branch $TRAVIS_PULL_REQUEST_BRANCH"
-echo " this is PR-$TRAVIS_PULL_REQUEST  and   $TRAVIS_EVENT_TYPE"
+echo "this is PR-$TRAVIS_PULL_REQUEST  and   $TRAVIS_EVENT_TYPE"
 pip install --upgrade --user awscli # install aws cli w/o sudo
 aws configure set aws_access_key_id $AWS_ID
 aws configure set aws_secret_access_key $AWS_SEC
 aws configure set default.region us-west-2
 aws --version
+
+def getPrNumber() {
+    sh "git log --oneline -1 > pr.txt"
+    def commit = readFile file:'pr.txt'
+    return (commit =~ /\#\d*/)[0].split('#')[1]
+}
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "################   PULL REQUEST ####################"
@@ -25,7 +31,7 @@ if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request" ]; t
      #echo "################   master ####################"
      # REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
      echo "deploying to s3  /page/"
-     # aws s3 sync ./build s3://lukasdevelopementtest/page/ --metadata-directive REPLACE
+     # aws git log - sync ./build s3://lukasdevelopementtest/page/ --metadata-directive REPLACE
      echo "Prod updated "
      #aws cloudfront create-invalidation --distribution-id E1DPUTDLIX844A --paths /
      echo "##############################################"

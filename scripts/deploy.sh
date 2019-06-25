@@ -13,6 +13,8 @@ aws --version
 GetPrNum()
 {
     echo "Getting PR Number"
+    git log --oneline -1 > PR.txt
+    echo sed -nr '/#:/ s/.*#:([^"]+).*/\1/p' PR.txt
 }
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
@@ -21,7 +23,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     git config --global user.name "lhoover12"
     echo "################   Git Log   ####################"
     GetPrNum
-    git log --oneline -1 
+
     echo "################   Git Log   ####################"
     echo "################   PULL REQUEST ####################"
     #PRNUM="PR-$TRAVIS_PULL_REQUEST"

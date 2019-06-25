@@ -12,6 +12,8 @@ aws --version
 
 GetPrNum()
 {
+    git config --global user.email "lukashoover@hotmail.com"
+    git config --global user.name "lhoover12"
     echo "Getting PR Number"
     git log --oneline -1 > PR.txt
     SCEOND=$(cut -d "#" -f 2 <<< cat PR.txt)
@@ -34,9 +36,9 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     echo "##############################################"
 fi
 if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
-    git config --global user.email "lukashoover@hotmail.com"
-    git config --global user.name "lhoover12"
-    aws s3 rm s3://lukasdevelopementtest/page/PR/$PR_NUMBER/
+
+    GetPrNum
+    aws s3 rm s3://lukasdevelopementtest/page/PR/PR-$PR_NUMBER/
     echo "################   master ####################"
     REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
     echo "deploying to s3  /page/"

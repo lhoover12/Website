@@ -19,8 +19,10 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     
     git config --global user.email "lukashoover@hotmail.com"
     git config --global user.name "lhoover12"
-    git checkout https://${GH_TOKEN}@github.com/lhoover12/Website
+    echo "################   Git Log   ####################"
+
     git log --oneline -1 
+    echo "################   Git Log   ####################"
     echo "################   PULL REQUEST ####################"
     #PRNUM="PR-$TRAVIS_PULL_REQUEST"
     echo "yarn build "

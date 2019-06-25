@@ -20,7 +20,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     git config --global user.email "lukashoover@hotmail.com"
     git config --global user.name "lhoover12"
     echo "################   Git Log   ####################"
-
+    GetPrNum
     git log --oneline -1 
     echo "################   Git Log   ####################"
     echo "################   PULL REQUEST ####################"

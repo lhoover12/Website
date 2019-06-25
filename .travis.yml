@@ -1,11 +1,9 @@
-language: node_js
-node_js:
-  - "stable"
-cache:
-  yarn: true
-  directories:
-    - node_modules
-  before_install:
-    - export PATH=$PATH:$HOME/.local/bin
-script:
-  - bash scripts/deploy.sh
+language: groovy
+
+before_script:
+  - echo "groovy installed ${GROOVY_VERSION}"
+
+  script:
+  - TERM=dumb groovy /scripts/deploy.groovy
+jdk:
+  - oraclejdk8

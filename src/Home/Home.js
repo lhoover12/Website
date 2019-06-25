@@ -162,6 +162,7 @@ export default class Home extends Component {
       <SectionsContainer {...options}>
         <Section color="#2C417F">
           <Arrow float={"left"} glyph="arrow-down" />
+
           <Arrow float={"right"} glyph="arrow-down" />
           <Spring
             config={{ tension: 180, friction: 20 }}
@@ -178,6 +179,14 @@ export default class Home extends Component {
             toggle={this.state.toggle} // Additional props will be spread over the child
             children={Content} // Render prop
           />
+          <p
+            style={{
+              color: "#fff",
+              textAlign: "center"
+            }}
+          >
+            v1
+          </p>
         </Section>
         <Section color="#354E98">
           <Tech />

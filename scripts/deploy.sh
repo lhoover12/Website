@@ -9,7 +9,18 @@ aws configure set aws_secret_access_key $AWS_SEC
 aws configure set default.region us-west-2
 aws --version
 
+
+GetPrNum()
+{
+    echo "Getting PR Number"
+}
+
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+    
+    git config --global user.email "lukashoover@hotmail.com"
+    git config --global user.name "lhoover12"
+    git checkout https://${GH_TOKEN}@github.com/lhoover12/Website
+    git log --oneline -1 
     echo "################   PULL REQUEST ####################"
     #PRNUM="PR-$TRAVIS_PULL_REQUEST"
     echo "yarn build "

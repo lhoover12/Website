@@ -3,18 +3,18 @@ echo "PR num  $TRAVIS_PULL_REQUEST"
 echo "branch $TRAVIS_BRANCH"
 echo "PR branch $TRAVIS_PULL_REQUEST_BRANCH"
 echo " this is PR-$TRAVIS_PULL_REQUEST  and   $TRAVIS_EVENT_TYPE"
-pip install --upgrade --user awscli # install aws cli w/o sudo
-aws configure set aws_access_key_id $AWS_ID
-aws configure set aws_secret_access_key $AWS_SEC
-aws configure set default.region us-west-2
-aws --version
+#pip install --upgrade --user awscli # install aws cli w/o sudo
+#aws configure set aws_access_key_id $AWS_ID
+#aws configure set aws_secret_access_key $AWS_SEC
+#aws configure set default.region us-west-2
+#aws --version
 
 
 GetPrNum()
 {
     echo "Getting PR Number"
     git log --oneline -1 > PR.txt
-    echo sed -nr '/#:/ s/.*#:([^"]+).*/\1/p' PR.txt
+  sed -nr '/#:/ s/.*#:([^"]+).*/\1/p' PR.txt
 }
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
@@ -23,7 +23,6 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     git config --global user.name "lhoover12"
     echo "################   Git Log   ####################"
     GetPrNum
-
     echo "################   Git Log   ####################"
     echo "################   PULL REQUEST ####################"
     #PRNUM="PR-$TRAVIS_PULL_REQUEST"

@@ -15,7 +15,7 @@ GetPrNum()
     echo "Getting PR Number"
     git log --oneline -1 > PR.txt
     y="$( sed -nr '/#:/ s/.*#:([^"]+).*/\1/p' PR.txt )"
-     echo "$y"
+     echo "pr num $y"
 }
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then

@@ -20,11 +20,7 @@ GetPrNum()
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     
-    git config --global user.email "lukashoover@hotmail.com"
-    git config --global user.name "lhoover12"
-    echo "################   Git Log   ####################"
-    GetPrNum
-    echo "################   Git Log   ####################"
+
     echo "################   PULL REQUEST ####################"
     #PRNUM="PR-$TRAVIS_PULL_REQUEST"
     echo "yarn build "
@@ -37,6 +33,11 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -a "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     echo "##############################################"
 fi
 if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
+    git config --global user.email "lukashoover@hotmail.com"
+    git config --global user.name "lhoover12"
+    echo "################   Git Log   ####################"
+    GetPrNum
+    echo "################   Git Log   ####################"
      #echo "################   master ####################"
      # REACT_APP_PATH=/page PUBLIC_URL=/page yarn build
      echo "deploying to s3  /page/"

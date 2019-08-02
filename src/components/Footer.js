@@ -3,11 +3,12 @@ import styled from "styled-components";
 import img from "../assets/images/heart.png";
 const FooterWrapper = styled.footer`
   
-  height: 120px;
+  height: 165px;
   padding: 40px;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   position: absolute;
@@ -28,11 +29,17 @@ const Heart = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 `;
+const Love = styled.h3`
+ 
+`;
 export default class Footer extends Component {
   render() {
     return (
       <FooterWrapper>
+        <a href={"https://www.youtube.com/watch?v=HQmmM_qwG4k"}>
         <Heart />
+       <Love> Built With Love</Love>
+       </a>
       </FooterWrapper>
     );
   }

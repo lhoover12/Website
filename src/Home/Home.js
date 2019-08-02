@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Col, Row as BootRow } from 'react-bootstrap';
+import { Col, Row as BootRow, Grid } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import Cover from './cover'
 //https://color.adobe.com/trends/Graphic-design?page=2
 const HomePage = styled.div`
+&&&{
   text-align: center;
   
   min-height: 100vh;
@@ -13,6 +16,15 @@ const HomePage = styled.div`
   background-color: #313340;
   color: #F2C36B;
   linear-gradient(to right, #0367a6 0, #a2cdf2 100%);
+
+a{
+  :hover{
+color: #F2921D;
+  }
+}
+}
+
+
 `;
 const Heading = styled.h1`
   width: 100%;
@@ -28,16 +40,30 @@ const Subtext = styled.p`
   margin-top: auto;
   margin-bottom: auto;
   font-size: calc(1.5vw + 1em);
-  margin-bottom: 50px;
+
+`;
+const Text = styled.p`
+  width: 100%;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: calc(1.5vw + .5em);
+  margin-bottom: 5em;
+ 
 `;
 const Border = styled.div`
   border: solid 1px #f2c36b;
   height: 0;
   width: 100%;
 
-  margin-top: 1.2em;
 `;
-const Nav = styled.p`
+const Container =styled(Grid)
+`
+margin-top: 75vh;
+min-height: 100vh;
+`
+const Nav = styled(Link)`
+margin-top: 50px;
   margin-bottom: 50px;
   width: 100%;
   color: #bfcfd9;
@@ -54,29 +80,36 @@ export default class Home extends Component {
   render() {
     return (
       <HomePage>
+           <Cover>
+            </Cover>
+            <Container>
         <BootRow>
           <Col md={12}>
             <Heading>Lukas Hoover</Heading>
+       
           </Col>
+        
           <Col md={12}>
-            <Subtext>Cool Guy</Subtext>
+            <Subtext>Developer</Subtext>
+            <Text>The best dang web developer this side of the Mississippi.</Text>
           </Col>
           <Col md={3}>
-            <Nav>1</Nav>
+            <Nav to={'/projects'}>Project</Nav>
           </Col>
-          <Col md={1}>
+          <Col md={1} style={{margin: 'auto'}}>
             <Border />
           </Col>
           <Col md={4}>
-            <Nav>2</Nav>
+            <Nav to={'/skills'}>Skills</Nav>
           </Col>
-          <Col md={1}>
+          <Col md={1} style={{margin: 'auto'}}>
             <Border />
           </Col>
           <Col md={3}>
-            <Nav>3</Nav>
+            <Nav to={'/'}>About Me</Nav>
           </Col>
         </BootRow>
+        </Container>
       </HomePage>
     );
   }

@@ -19,6 +19,7 @@ const Main = styled.main`
 
 export default class Router extends Component {
   render() {
+    console.log(process.env.REACT_APP_PATH)
     return (
         <BrowserRouter basename={process.env.REACT_APP_PATH}>
         <>

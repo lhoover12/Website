@@ -55,30 +55,45 @@ export default class Router extends Component {
               exact
               path="/Jimmy/Birthday"
               render={props => (
-                <Birthday {...props} person={"Jimmy"} day={27} month={8} />
+                <Birthday {...props} person={'Jimmy'} day={27} month={8} />
               )}
             />
             <Route
               exact
               path="/Maddie/Birthday"
               render={props => (
-                <Birthday {...props} person={"Maddie"} day={12} month={3} />
+                <Birthday {...props} person={'Maddie'} day={12} month={3} />
               )}
             />
             <Route
               exact
               path="/Liang/Birthday"
               render={props => (
-                <Birthday {...props} person={"Liang"} day={26} month={5} />
+                <Birthday {...props} person={'Liang'} day={26} month={5} />
               )}
             />
             <Route
               exact
               path="/Ryan/Birthday"
               render={props => (
-                <Birthday {...props} person={"Ryan"} day={12} month={3} />
+                <Birthday {...props} person={'Ryan'} day={12} month={3} />
               )}
             />
+            <Route
+              exact
+              path="/Jeremy/Birthday"
+              render={props => (
+                <Birthday {...props} person={'Jeremy'} day={19} month={6} />
+              )}
+            />
+            <Route
+              exact
+              path="/Lukas/Birthday"
+              render={props => (
+                <Birthday {...props} person={'Lukas'} day={20} month={6} />
+              )}
+            />
+
             <Route exact path="/404" render={props => <Error {...props} />} />
             <Route exact path="/">
               <Redirect to="/home" />

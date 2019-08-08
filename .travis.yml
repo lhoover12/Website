@@ -8,4 +8,4 @@ cache:
   before_install:
     - export PATH=$PATH:$HOME/.local/bin
 script:
-  - bash scripts/deploy.sh
+  - bash scripts/deploy.sh || travis_terminate 1

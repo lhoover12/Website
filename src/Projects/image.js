@@ -36,7 +36,7 @@ const But= styled.button`
 }
 `;
 
-Image = props => {
+const Image = props => {
 
   return <Comp img={props.img} md={4} >
     <But onClick={props.onClick}></But>

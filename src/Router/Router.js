@@ -8,9 +8,8 @@ import Dogs from "../dogs";
 import About from "../About";
 import Birthday from "../Birthday";
 import styled from "styled-components";
-import Header from "../Header"
+
 import Footer from '../components/Footer';
-import { Grid, Row as BootRow, Col } from "react-bootstrap";
 const Main = styled.main`
     background-color: #313340;
 `;

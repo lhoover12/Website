@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import { Col, Row as BootRow, Grid } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Cover from './cover'
@@ -57,8 +56,7 @@ const Border = styled.div`
   width: 100%;
 
 `;
-const Container =styled(Grid)
-`
+const Container =styled(Grid)`
 margin-top: 75vh;
 min-height: 100vh;
 `

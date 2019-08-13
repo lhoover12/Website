@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import styled from 'styled-components';
 import ConfettiGenerator from 'confetti-js';
 const Absolute = styled.div`

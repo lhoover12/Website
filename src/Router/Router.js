@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Home from '../Home';
-import Skills from '../Skills';
-import Projects from '../Projects';
-import Error from '../Error';
-import Dogs from '../dogs';
-import About from '../About';
-import Birthday from '../Birthday';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Home from "../Home";
+import Skills from "../Skills";
+import Projects from "../Projects";
+import Error from "../Error";
+import Dogs from "../dogs";
+import About from "../About";
+import Birthday from "../Birthday";
+import styled from "styled-components";
+
+import Footer from '../components/Footer';
+const Main = styled.main`
+    background-color: #313340;
+`;
+
+
 
 export default class Router extends Component {
   render() {
+    console.log(process.env.REACT_APP_PATH)
     return (
-      <div>
         <BrowserRouter basename={process.env.REACT_APP_PATH}>
+        <>
+
+        <Main>
+  
           <Switch>
             <Route exact path="/home" render={props => <Home {...props} />} />
             <Route exact path="/home" render={props => <Home {...props} />} />
@@ -88,9 +100,15 @@ export default class Router extends Component {
             <Route>
               <Redirect to="/404" />
             </Route>
-          </Switch>
+          </Switch>    
+     
+            </Main>
+          <Footer></Footer>
+          </>
         </BrowserRouter>
-      </div>
+
+
+
     );
   }
 }

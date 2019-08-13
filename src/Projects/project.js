@@ -1,76 +1,80 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Grid, Col } from "react-bootstrap";
-import { Header, Footer } from "../components";
-import img from "../assets/images/Lukas.PNG";
-import Health from "../assets/images/Health.PNG";
-import Developer from "../assets/images/Developer.PNG";
-import depression from "../assets/images/depression.PNG";
-import psas from "../assets/images/psas.PNG";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Grid, Col } from 'react-bootstrap';
+import img from '../assets/images/Lukas.PNG';
+import Health from '../assets/images/Health.PNG';
+import Developer from '../assets/images/Developer.PNG';
+import depression from '../assets/images/depression.PNG';
+import psas from '../assets/images/psas.PNG';
+import Image from './image';
+const Wrapper = styled(Grid)`
+  &&& {
+    min-height: 100vh;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    color: #f2d399;
+  }
+`;
+const Desc = styled.p`
+  &&& {
+    min-height: 100vh;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    color: #f2d399;
+  }
+`;
 
-const Wrapper = styled(Col)`
-  width: 100%;
-  height: 90%;
-  text-align: center;
-  background-color: #e2e2e2;
 
-  margin-top: 20px;
-  margin-bottom: 40px;
-  box-shadow: 5px 5px 10px #aab1cc;
-`;
-const Site = styled.img`
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-`;
-const SiteName = styled.p`
-  margin-top: -20px;
-  text-align: center;
-  font-size: 3rem;
-`;
+
+//https://color.adobe.com/trends/Graphic-design?page=2
 export default class Projects extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      des: ''};
+  }
+
   render() {
+
+    const showDesc = (num) =>{
+      switch(num) {
+        case 1:
+        this.setState({des: "My site"});
+          break;
+        case 2:
+          this.setState({des: "Link"});
+          break;
+        case 3:
+          this.setState({des: "LinK Developer"});
+          break;
+        case 4:
+          this.setState({des: "Depression Screener"});
+          break;
+        case 5:
+          this.setState({des: "PSaaS"});
+          break;
+        default:
+          // code block
+      } 
+    
+    }
     return (
-      <div>
-        <Header />
-        <Grid style={{ paddingTop: "110px" }}>
-          <Row>
-            <a href="https://provider.linkhealth.com/#/">
-              <Wrapper md={12}>
-                <Site src={Health} />
-                <SiteName>provider.linkhealth.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="https://developer.linkhealth.com/">
-              <Wrapper md={12}>
-                <Site src={Developer} />
-                <SiteName>developer.linkhealth.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="http://lukashoover.com">
-              <Wrapper md={12}>
-                <Site src={img} />
-                <SiteName>LukasHoover.com</SiteName>
-              </Wrapper>
-            </a>
-            <a href="https://www.liveandworkwell.com/en/member/mind-body/mental-health/depression/depression-screener.html">
-              <Wrapper md={12}>
-                <Site src={depression} />
-                <SiteName>Depression Screener</SiteName>
-              </Wrapper>
-            </a>
-            <a href=" https://provider.liveandworkwell.com/content/laww/providersearch/en/home.html">
-              <Wrapper md={12}>
-                <Site src={psas} />
-                <SiteName>Provider Search Widget</SiteName>
-              </Wrapper>
-            </a>
-           
-          </Row>
-        </Grid>
-        <Footer />
-      </div>
+      <Wrapper>
+        <Col md={12}>
+          <h1>Look at all these projects!</h1>
+        </Col>
+        <Image onClick={()=>{showDesc(1)}} img={img} />
+        <Image onClick={()=>{showDesc(2)}} img={Health} />
+        <Image onClick={()=>{showDesc(3)}} img={Developer} />
+        <Image onClick={()=>{showDesc(4)}} img={depression} />
+        <Image onClick={()=>{showDesc(5)}} img={psas} />
+        <Image />
+        <Desc>
+          {this.state.des}
+        </Desc>
+      </Wrapper>
     );
   }
 }

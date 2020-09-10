@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://lukashoover.com/page",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "confetti-js": "0.0.15",
     "enzyme": "^3.3.0",
     "font-awesome": "^4.7.0",
